@@ -133,7 +133,7 @@
   *   Dois endpoints para que seja possível cadastrar países e estados. Pode existir país sem estados associados.
   *   Caso alguma restrição não seja atendida, retornar 400 e json com os problemas de validação.
   
-## 0-0-9-comeco-fluxo-pagameno-parte-1
+## 0-0-9-comeco-fluxo-pagamento-parte-1
   ### **necessidades**
 
   Agora vamos começar o processo de conclusão de compra. Primeiro vamos realizar um cadastro de clientes. 
