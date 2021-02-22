@@ -20,6 +20,7 @@ public class EstadoController {
 	public String cadastrar(@RequestBody @Valid NovoEstadoRequest request){
 		Estado novoEstado = request.toModel(em);
 		em.persist(novoEstado);
+		
 		return novoEstado.toString();
 	}
 	

@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.fluxodepagamento;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,18 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pais")
-public class PaisController {
-	
+@RequestMapping("/cliente")
+public class ClienteController {
+
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@PostMapping
 	@Transactional
-	public String cadastrar(@RequestBody @Valid NovoPaisRequest request){
-		Pais novoPais = new Pais(request.getNome());
-		em.persist(novoPais);
-		
-		return novoPais.toString();
+	public String criar(@RequestBody @Valid NovoClienteRequest request) {
+		Cliente cliente = request.toModel(em);
+
+		em.persist(cliente);
+
+		return cliente.toString();
+
 	}
 }
