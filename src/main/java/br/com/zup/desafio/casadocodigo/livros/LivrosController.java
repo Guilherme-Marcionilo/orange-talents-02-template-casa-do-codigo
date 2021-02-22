@@ -26,13 +26,11 @@ public class LivrosController {
 	@Autowired
 	private LivrosRepository livrosRepository;
 	
-	//MÉTODO GET QUE BUSCA TODAS POSTAGENS
 	@GetMapping
 	public ResponseEntity<List<Livros>> getAll(){
 		return ResponseEntity.ok(livrosRepository.findAll());
 	}
 	
-	//MÉTODO GET QUE BUSCA POSTAGENS PELO ID
 	@GetMapping("/{id}")
 	public ResponseEntity<Livros> getById(@PathVariable Long id){
 		return livrosRepository.findById(id)
