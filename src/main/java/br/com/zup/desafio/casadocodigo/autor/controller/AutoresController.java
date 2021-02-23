@@ -1,30 +1,35 @@
-package br.com.zup.desafio.fluxodepagamento;
+package br.com.zup.desafio.casadocodigo.autor.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.zup.desafio.casadocodigo.autor.NovoAutorRequest;
+import br.com.zup.desafio.casadocodigo.autor.model.Autor;
+
 @RestController
-@RequestMapping("/cliente")
-public class ClienteController {
+@RequestMapping("/autores")
+public class AutoresController {
 
 	@PersistenceContext
 	private EntityManager em;
 
 	@PostMapping
 	@Transactional
-	public String criar(@RequestBody @Valid NovoClienteRequest request) {
-		Cliente cliente = request.toModel(em);
+	public ResponseEntity<Autor> cadastrar(@RequestBody @Valid NovoAutorRequest request) {
+		
+		Autor autor = request.toModel();
+		em.persist(autor);
 
-		em.persist(cliente);
-
-		return cliente.toString();
+		return ResponseEntity.ok(autor);
 
 	}
+
 }

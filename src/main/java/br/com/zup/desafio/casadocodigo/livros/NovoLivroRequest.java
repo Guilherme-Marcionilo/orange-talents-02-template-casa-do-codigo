@@ -2,10 +2,11 @@ package br.com.zup.desafio.casadocodigo.livros;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.zup.desafio.casadocodigo.autor.Autor;
-import br.com.zup.desafio.casadocodigo.categoria.Categoria;
+import br.com.zup.desafio.casadocodigo.autor.model.Autor;
+import br.com.zup.desafio.casadocodigo.categoria.model.Categoria;
 import br.com.zup.desafio.casadocodigo.compartilhado.ExistsId;
 import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
+import br.com.zup.desafio.casadocodigo.livros.model.Livros;
 
 import org.springframework.util.Assert;
 

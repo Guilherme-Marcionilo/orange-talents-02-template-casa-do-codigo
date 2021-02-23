@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.livros;
+package br.com.zup.desafio.casadocodigo.livros.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,8 +17,8 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.zup.desafio.casadocodigo.autor.Autor;
-import br.com.zup.desafio.casadocodigo.categoria.Categoria;
+import br.com.zup.desafio.casadocodigo.autor.model.Autor;
+import br.com.zup.desafio.casadocodigo.categoria.model.Categoria;
 
 @Entity
 @Table(name = "livros")

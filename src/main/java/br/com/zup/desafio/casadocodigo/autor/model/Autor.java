@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.autor;
+package br.com.zup.desafio.casadocodigo.autor.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

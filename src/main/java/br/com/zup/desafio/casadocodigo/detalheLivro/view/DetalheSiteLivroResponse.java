@@ -1,9 +1,9 @@
-package br.com.zup.desafio.casadocodigo.detalheLivro;
+package br.com.zup.desafio.casadocodigo.detalheLivro.view;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
 
-import br.com.zup.desafio.casadocodigo.livros.Livros;
+import br.com.zup.desafio.casadocodigo.livros.model.Livros;
 
 public class DetalheSiteLivroResponse {
 

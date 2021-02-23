@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.casadocodigo.paisestado.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

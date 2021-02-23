@@ -6,6 +6,8 @@ import javax.validation.constraints.NotBlank;
 import com.sun.istack.NotNull;
 
 import br.com.zup.desafio.casadocodigo.compartilhado.ExistsId;
+import br.com.zup.desafio.casadocodigo.paisestado.model.Estado;
+import br.com.zup.desafio.casadocodigo.paisestado.model.Pais;
 import br.com.zup.desafio.casadocodigo.paisestado.validacao.UniqueEstadoPais;
 @UniqueEstadoPais(domainClass = Estado.class,fieldName1 = "nome",fieldName2 = "idPais")
 public class NovoEstadoRequest {

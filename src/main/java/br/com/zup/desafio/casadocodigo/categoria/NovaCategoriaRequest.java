@@ -2,6 +2,7 @@ package br.com.zup.desafio.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zup.desafio.casadocodigo.categoria.model.Categoria;
 import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
 
 public class NovaCategoriaRequest {

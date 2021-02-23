@@ -1,4 +1,4 @@
-package br.com.zup.desafio.fluxodepagamento;
+package br.com.zup.desafio.casadocodigo.cliente.validacao;
 
 import org.hibernate.validator.constraints.CompositionType;
 import org.hibernate.validator.constraints.ConstraintComposition;

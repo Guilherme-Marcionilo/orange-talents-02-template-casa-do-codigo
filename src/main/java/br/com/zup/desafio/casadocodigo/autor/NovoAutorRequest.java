@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.zup.desafio.casadocodigo.autor.model.Autor;
 import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
 
 public class NovoAutorRequest {

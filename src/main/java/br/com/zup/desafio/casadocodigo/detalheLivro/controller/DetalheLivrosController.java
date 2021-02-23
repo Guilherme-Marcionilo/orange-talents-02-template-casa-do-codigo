@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.detalheLivro;
+package br.com.zup.desafio.casadocodigo.detalheLivro.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zup.desafio.casadocodigo.livros.Livros;
+import br.com.zup.desafio.casadocodigo.detalheLivro.view.DetalheSiteLivroResponse;
+import br.com.zup.desafio.casadocodigo.livros.model.Livros;
 
 @RestController
 public class DetalheLivrosController {

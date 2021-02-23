@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.casadocodigo.paisestado.model;
 
 import java.util.List;
 

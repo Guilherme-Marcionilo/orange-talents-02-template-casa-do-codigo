@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
+import br.com.zup.desafio.casadocodigo.paisestado.model.Pais;
 
 public class NovoPaisRequest {
 

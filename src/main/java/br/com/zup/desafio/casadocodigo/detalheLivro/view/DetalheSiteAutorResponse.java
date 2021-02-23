@@ -1,6 +1,6 @@
-package br.com.zup.desafio.casadocodigo.detalheLivro;
+package br.com.zup.desafio.casadocodigo.detalheLivro.view;
 
-import br.com.zup.desafio.casadocodigo.autor.Autor;
+import br.com.zup.desafio.casadocodigo.autor.model.Autor;
 
 public class DetalheSiteAutorResponse{
 

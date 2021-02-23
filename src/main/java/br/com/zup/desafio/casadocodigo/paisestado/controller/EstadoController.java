@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.casadocodigo.paisestado.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,6 +8,9 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.com.zup.desafio.casadocodigo.paisestado.NovoEstadoRequest;
+import br.com.zup.desafio.casadocodigo.paisestado.model.Estado;
 
 @RestController
 public class EstadoController {
