@@ -51,9 +51,8 @@ public class NovoClienteRequest {
     @NotBlank
     private String cep;
 
-// Por que, não é possível, inserir o método com a anotação @Deprecated?
-//    @Deprecated
-//    public NovoClienteRequest() {}
+    @Deprecated
+    public NovoClienteRequest() {}
     
     
     public NovoClienteRequest(@Email String email, @NotBlank String nome, @NotBlank String sobrenome,
@@ -91,8 +90,44 @@ public class NovoClienteRequest {
     public Long getIdEstado() {
         return idEstado;
     }
+    
+    public String getEmail() {
+		return email;
+	}
 
-    @Override
+	public String getNome() {
+		return nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public String getDocumento() {
+		return documento;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	@Override
     public String toString() {
         return "ClienteRequest{" +
                 "email='" + email + '\'' +
