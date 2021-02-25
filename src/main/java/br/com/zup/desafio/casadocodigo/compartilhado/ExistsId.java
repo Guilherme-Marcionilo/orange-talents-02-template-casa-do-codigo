@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.compartilhado;
+package br.com.zup.desafio.CasaDoCodigo.compartilhado;
 
 import static java.lang.annotation.ElementType.FIELD;
 

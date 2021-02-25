@@ -1,97 +1,77 @@
-package br.com.zup.desafio.casadocodigo.cliente;
+package br.com.zup.desafio.CasaDoCodigo.cliente;
 
 import javax.persistence.EntityManager;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
-import br.com.zup.desafio.casadocodigo.cliente.model.Cliente;
-import br.com.zup.desafio.casadocodigo.cliente.validacao.CPFouCNPJ;
-import br.com.zup.desafio.casadocodigo.compartilhado.ExistsId;
-import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
-import br.com.zup.desafio.casadocodigo.paisestado.model.Estado;
-import br.com.zup.desafio.casadocodigo.paisestado.model.Pais;
+import com.sun.istack.NotNull;
+
+import br.com.zup.desafio.CasaDoCodigo.cliente.validacao.CPFouCNPJ;
+import br.com.zup.desafio.CasaDoCodigo.compartilhado.ExistsId;
+import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
+import br.com.zup.desafio.CasaDoCodigo.paisestado.Estado;
+import br.com.zup.desafio.CasaDoCodigo.paisestado.Pais;
 
 public class NovoClienteRequest {
 
-    @Email
-    @UniqueValue(domainClass = Cliente.class, fieldName = "email")
-    private String email;
+	@Email
+	@UniqueValue(domainClass = Cliente.class, fieldName = "email")
+	private String email;
 
-    @NotBlank
-    private String nome;
+	@NotBlank
+	private String nome;
 
-    @NotBlank
-    private String sobrenome;
+	@NotBlank
+	private String sobrenome;
 
-    @NotBlank
-    @CPFouCNPJ
-    @UniqueValue(domainClass = Cliente.class, fieldName = "documento")
-    private String documento;
+	@NotBlank
+	@CPFouCNPJ
+	@UniqueValue(domainClass = Cliente.class, fieldName = "documento")
+	private String documento;
 
-    @NotBlank
-    private String endereco;
+	@NotBlank
+	private String endereco;
 
-    @NotBlank
-    private String complemento;
+	@NotBlank
+	private String complemento;
 
-    @NotBlank
-    private String cidade;
+	@NotBlank
+	private String cidade;
 
-    @NotNull
-    @ExistsId(domainClass = Pais.class, fieldName = "id")
-    private Long idPais;
+	@NotNull
+	@ExistsId(domainClass = Pais.class, fieldName = "id")
+	private Long idPais;
 
-    @ExistsId(domainClass = Estado.class, fieldName = "id")
-    private Long idEstado;
+	@ExistsId(domainClass = Estado.class, fieldName = "id")
+	private Long idEstado;
 
-    @NotBlank
-    private String telefone;
+	@NotBlank
+	private String telefone;
 
-    @NotBlank
-    private String cep;
+	@NotBlank
+	private String cep;
 
-    @Deprecated
-    public NovoClienteRequest() {}
-    
-    
-    public NovoClienteRequest(@Email String email, @NotBlank String nome, @NotBlank String sobrenome,
-                          @NotBlank String documento, @NotBlank String endereco, @NotBlank String complemento,
-                          @NotBlank String cidade, @NotNull Long idPais, Long idEstado, @NotBlank String telefone,
-                          @NotBlank String cep) {
-        this.email = email;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.documento = documento;
-        this.endereco = endereco;
-        this.complemento = complemento;
-        this.cidade = cidade;
-        this.idPais = idPais;
-        this.idEstado = idEstado;
-        this.telefone = telefone;
-        this.cep = cep;
-    }
+	@Deprecated
+	public NovoClienteRequest() {
+	}
 
-    public Cliente toModel(EntityManager em) {
-        Pais pais = em.find(Pais.class, idPais);
-        Cliente cliente = new Cliente(this.email, this.nome, this.sobrenome, this.documento,
-                this.endereco, this.complemento, this.cidade, pais, this.telefone,
-                this.cep);
-        if (idEstado != null) {
-            cliente.setEstado(em.find(Estado.class, idEstado));
-        }
-        return cliente;
-    }
+	public NovoClienteRequest(@Email String email, @NotBlank String nome, @NotBlank String sobrenome,
+			@NotBlank String documento, @NotBlank String endereco, @NotBlank String complemento,
+			@NotBlank String cidade, Long idPais, Long idEstado, @NotBlank String telefone, @NotBlank String cep) {
+		this.email = email;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.documento = documento;
+		this.endereco = endereco;
+		this.complemento = complemento;
+		this.cidade = cidade;
+		this.idPais = idPais;
+		this.idEstado = idEstado;
+		this.telefone = telefone;
+		this.cep = cep;
+	}
 
-    public Long getIdPais() {
-        return idPais;
-    }
-
-    public Long getIdEstado() {
-        return idEstado;
-    }
-    
-    public String getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
@@ -119,6 +99,14 @@ public class NovoClienteRequest {
 		return cidade;
 	}
 
+	public Long getIdPais() {
+		return idPais;
+	}
+
+	public Long getIdEstado() {
+		return idEstado;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -127,20 +115,14 @@ public class NovoClienteRequest {
 		return cep;
 	}
 
-	@Override
-    public String toString() {
-        return "ClienteRequest{" +
-                "email='" + email + '\'' +
-                ", nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", documento='" + documento + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", complemento='" + complemento + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", idPais=" + idPais +
-                ", idEstado=" + idEstado +
-                ", telefone='" + telefone + '\'' +
-                ", cep='" + cep + '\'' +
-                '}';
-    }
+	public Cliente toModel(EntityManager em) {
+		Pais pais = em.find(Pais.class, idPais);
+		Cliente cliente = new Cliente(this.email, this.nome, this.sobrenome, this.documento, this.endereco,
+				this.complemento, this.cidade, pais, this.telefone, this.cep);
+		if (idEstado != null) {
+			cliente.setEstado(em.find(Estado.class, idEstado));
+		}
+		return cliente;
+	}
+
 }

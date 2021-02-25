@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.paisestado.validacao;
+package br.com.zup.desafio.casadocodigo.paisestado.validacao;
 
 import org.springframework.beans.BeanWrapperImpl;
 

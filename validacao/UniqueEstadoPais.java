@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.paisestado.validacao;
+package br.com.zup.desafio.casadocodigo.paisestado.validacao;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

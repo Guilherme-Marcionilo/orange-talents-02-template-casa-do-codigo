@@ -1,4 +1,4 @@
-package br.com.zup.desafio.casadocodigo.cliente.validacao;
+package br.com.zup.desafio.CasaDoCodigo.cliente.validacao;
 
 import org.hibernate.validator.constraints.CompositionType;
 import org.hibernate.validator.constraints.ConstraintComposition;
@@ -25,3 +25,4 @@ public @interface CPFouCNPJ {
     Class<? extends Payload>[] payload() default { };
 
 }
+

@@ -1,6 +1,4 @@
-package br.com.zup.desafio.casadocodigo.compartilhado;
-
-import org.springframework.util.Assert;
+package br.com.zup.desafio.CasaDoCodigo.compartilhado;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,25 +9,25 @@ import java.util.List;
 
 public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Object> {
 
+    @PersistenceContext
+    EntityManager em;
     private String domainAttribute;
     private Class<?> klass;
-    @PersistenceContext
-    private EntityManager manager;
 
     @Override
-    public void initialize(UniqueValue params) {
-        domainAttribute = params.fieldName();
-        klass = params.domainClass();
+    public void initialize(UniqueValue uniqueValue) {
+        domainAttribute = uniqueValue.fieldName().toLowerCase();
+        klass = uniqueValue.domainClass();
     }
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        Query query = manager.createQuery("select 1 from " + klass.getName() + " where " + domainAttribute + " = :value");
+
+        Query query = em.createQuery("SELECT 1 FROM " + klass.getName()
+                + " WHERE " + domainAttribute + "=:value");
         query.setParameter("value", value);
 
         List<?> list = query.getResultList();
-
-        Assert.state(list.size() <=1, "Foi encontrado mais de um " + klass + " com o atributo" + domainAttribute);
 
         return list.isEmpty();
     }

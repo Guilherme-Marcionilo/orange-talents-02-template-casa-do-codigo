@@ -1,14 +1,14 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.CasaDoCodigo.paisestado;
 
 import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 
 import com.sun.istack.NotNull;
 
-import br.com.zup.desafio.casadocodigo.compartilhado.ExistsId;
-import br.com.zup.desafio.casadocodigo.paisestado.model.Estado;
-import br.com.zup.desafio.casadocodigo.paisestado.model.Pais;
-import br.com.zup.desafio.casadocodigo.paisestado.validacao.UniqueEstadoPais;
+import br.com.zup.desafio.CasaDoCodigo.compartilhado.ExistsId;
+import br.com.zup.desafio.CasaDoCodigo.paisestado.validacao.UniqueEstadoPais;
+
+
 @UniqueEstadoPais(domainClass = Estado.class,fieldName1 = "nome",fieldName2 = "idPais")
 public class NovoEstadoRequest {
 
@@ -16,7 +16,7 @@ public class NovoEstadoRequest {
 	private String nome;
 
 	@NotNull
-	@ExistsId(domainClass = Pais.class, fieldName = "id")
+	@ExistsId(domainClass = Pais.class, fieldName = "id", message = "Este Pais não existe!")
 	private Long idPais;
 
 	@Deprecated

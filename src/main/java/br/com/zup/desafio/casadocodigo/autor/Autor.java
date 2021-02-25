@@ -2,21 +2,30 @@ package br.com.zup.desafio.CasaDoCodigo.autor;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
+@Entity
+@Table(name = "autores")
+public class Autor {
 
-
-public class NovoAutorRequest {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@NotBlank
 	private String nome;
 	
 	@Email
 	@NotBlank
-	@UniqueValue(domainClass = Autor.class, fieldName = "email", message = "Email deve ser único!")
+	@Column(unique = true)
 	private String email;
 
 	@NotBlank
@@ -26,15 +35,17 @@ public class NovoAutorRequest {
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 
 	@Deprecated
-	public NovoAutorRequest() {}
+	public Autor() {}
 	
-	public NovoAutorRequest(@NotBlank String nome, @Email @NotBlank String email,
-			@NotBlank @Size(max = 10) String descricao) {
+	public Autor(@NotBlank String nome, @Email @NotBlank String email, @NotBlank @Size(max = 10) String descricao) {
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;
 	}
 
+	public Long getId() {
+		return id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -52,9 +63,10 @@ public class NovoAutorRequest {
 		return dataCriacao;
 	}
 
-	public Autor toModel() {
-
-		return new Autor(this.nome, this.email, this.descricao);
+	@Override
+	public String toString() {
+		return "Autor [id=" + id + ", email=" + email + ", nome=" + nome + ", descricao=" + descricao + ", dataCriacao="
+				+ dataCriacao + "]";
 	}
-	
+
 }

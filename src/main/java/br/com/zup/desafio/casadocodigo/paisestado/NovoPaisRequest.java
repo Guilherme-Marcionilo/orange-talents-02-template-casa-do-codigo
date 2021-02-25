@@ -1,34 +1,27 @@
-package br.com.zup.desafio.casadocodigo.paisestado;
+package br.com.zup.desafio.CasaDoCodigo.paisestado;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
-import br.com.zup.desafio.casadocodigo.compartilhado.UniqueValue;
-import br.com.zup.desafio.casadocodigo.paisestado.model.Pais;
+import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
 
 public class NovoPaisRequest {
 
 	@NotBlank
-	@UniqueValue(domainClass = Pais.class, fieldName = "nome")
+	@UniqueValue(domainClass = Pais.class, fieldName = "nome", message = "O nome deve ser único!")
 	private String nome;
-	
+
 	@Deprecated
 	public NovoPaisRequest() {}
-
-	public NovoPaisRequest(@NotBlank @Valid String nome) {
+	
+	public NovoPaisRequest(@NotBlank String nome) {
 		this.nome = nome;
 	}
 
 	public String getNome() {
 		return nome;
 	}
-	
-    public Pais toModel() {
-        return new Pais(this.nome);
-    }
 
-	
-	
-	
-	
+	public Pais toModel() {
+		return new Pais(this.nome);
+	}
 }
