@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Casa do Código
 
 ## 0-0-0-setup
