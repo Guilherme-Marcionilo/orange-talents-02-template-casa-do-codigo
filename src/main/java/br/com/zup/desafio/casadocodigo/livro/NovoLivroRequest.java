@@ -16,10 +16,11 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import br.com.zup.desafio.CasaDoCodigo.autor.Autor;
-import br.com.zup.desafio.CasaDoCodigo.categoria.Categoria;
+import br.com.zup.desafio.CasaDoCodigo.autor.model.Autor;
+import br.com.zup.desafio.CasaDoCodigo.categoria.model.Categoria;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.ExistsId;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
+import br.com.zup.desafio.CasaDoCodigo.livro.model.Livro;
 
 public class NovoLivroRequest {
 

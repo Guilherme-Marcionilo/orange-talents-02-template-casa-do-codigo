@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.detalheLivro;
+package br.com.zup.desafio.CasaDoCodigo.detalheLivro.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zup.desafio.CasaDoCodigo.livro.Livro;
+import br.com.zup.desafio.CasaDoCodigo.detalheLivro.DetalheSiteLivroResponse;
+import br.com.zup.desafio.CasaDoCodigo.livro.model.Livro;
 
 @RestController
 @RequestMapping("/produtos")

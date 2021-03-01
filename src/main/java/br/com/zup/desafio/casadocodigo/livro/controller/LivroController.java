@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.livro;
+package br.com.zup.desafio.CasaDoCodigo.livro.controller;
 
 import java.util.List;
 
@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.com.zup.desafio.CasaDoCodigo.livro.NovoLivroRequest;
+import br.com.zup.desafio.CasaDoCodigo.livro.model.Livro;
+import br.com.zup.desafio.CasaDoCodigo.livro.repository.LivroRepository;
 
 @RestController
 @RequestMapping("/livros")

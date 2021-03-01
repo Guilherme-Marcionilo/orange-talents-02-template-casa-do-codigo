@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.autor;
+package br.com.zup.desafio.CasaDoCodigo.categoria.controller;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,21 +10,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.zup.desafio.CasaDoCodigo.categoria.NovaCategoriaRequest;
+import br.com.zup.desafio.CasaDoCodigo.categoria.model.Categoria;
+
 @RestController
-@RequestMapping("/autores")
-public class AutorController {
+@RequestMapping("/categorias")
+public class CategoriaController {
 
 	@PersistenceContext
 	private EntityManager em;
 	
 	@PostMapping
 	@Transactional
-	public String cadastrar(@RequestBody @Valid NovoAutorRequest autorRequest){
-		Autor autor = autorRequest.toModel();
-		em.persist(autor);
-		
-		return autor.toString();
+	public String cadastrar(@RequestBody @Valid NovaCategoriaRequest request) {
+		Categoria categoria = request.toModel();
+		em.persist(categoria);
+		return categoria.toString();
 	}
-	
 	
 }

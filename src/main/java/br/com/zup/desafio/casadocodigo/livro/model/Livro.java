@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.livro;
+package br.com.zup.desafio.CasaDoCodigo.livro.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.com.zup.desafio.CasaDoCodigo.autor.Autor;
-import br.com.zup.desafio.CasaDoCodigo.categoria.Categoria;
+import br.com.zup.desafio.CasaDoCodigo.autor.model.Autor;
+import br.com.zup.desafio.CasaDoCodigo.categoria.model.Categoria;
 
 @Entity
 @Table(name = "livros")

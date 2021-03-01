@@ -1,6 +1,6 @@
 package br.com.zup.desafio.CasaDoCodigo.detalheLivro;
 
-import br.com.zup.desafio.CasaDoCodigo.autor.Autor;
+import br.com.zup.desafio.CasaDoCodigo.autor.model.Autor;
 
 public class DetalheSiteAutorResponse {
 

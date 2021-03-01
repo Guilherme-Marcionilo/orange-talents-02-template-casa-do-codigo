@@ -3,7 +3,7 @@ package br.com.zup.desafio.CasaDoCodigo.detalheLivro;
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
 
-import br.com.zup.desafio.CasaDoCodigo.livro.Livro;
+import br.com.zup.desafio.CasaDoCodigo.livro.model.Livro;
 
 public class DetalheSiteLivroResponse {
 

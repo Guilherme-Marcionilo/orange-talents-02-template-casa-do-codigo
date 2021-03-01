@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.categoria;
+package br.com.zup.desafio.CasaDoCodigo.categoria.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

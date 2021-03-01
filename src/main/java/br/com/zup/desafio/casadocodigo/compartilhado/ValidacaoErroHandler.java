@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.zup.desafio.CasaDoCodigo.livro.exceptions.MinhaExcecao;
-
 @RestControllerAdvice
 public class ValidacaoErroHandler {
 
@@ -40,9 +38,4 @@ public class ValidacaoErroHandler {
 
     }
     
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler({MinhaExcecao.class,})
-    public String MinhaExcecao(MinhaExcecao excecao) {
-    	return excecao.getMessage();
-    }
 }

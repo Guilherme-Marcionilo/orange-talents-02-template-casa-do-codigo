@@ -6,6 +6,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.zup.desafio.CasaDoCodigo.autor.model.Autor;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
 
 

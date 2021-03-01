@@ -2,6 +2,7 @@ package br.com.zup.desafio.CasaDoCodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zup.desafio.CasaDoCodigo.categoria.model.Categoria;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;
 
 public class NovaCategoriaRequest {

@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.cliente;
+package br.com.zup.desafio.CasaDoCodigo.cliente.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

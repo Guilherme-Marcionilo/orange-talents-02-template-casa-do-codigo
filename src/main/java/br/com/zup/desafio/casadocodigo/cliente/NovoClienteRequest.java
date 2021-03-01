@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 import com.sun.istack.NotNull;
 
+import br.com.zup.desafio.CasaDoCodigo.cliente.model.Cliente;
 import br.com.zup.desafio.CasaDoCodigo.cliente.validacao.CPFouCNPJ;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.ExistsId;
 import br.com.zup.desafio.CasaDoCodigo.compartilhado.UniqueValue;

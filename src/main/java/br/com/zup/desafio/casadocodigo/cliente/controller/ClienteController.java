@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.cliente;
+package br.com.zup.desafio.CasaDoCodigo.cliente.controller;
 
 import java.util.List;
 
@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.zup.desafio.CasaDoCodigo.cliente.NovoClienteRequest;
+import br.com.zup.desafio.CasaDoCodigo.cliente.model.Cliente;
+import br.com.zup.desafio.CasaDoCodigo.cliente.repository.ClienteRepository;
 import br.com.zup.desafio.CasaDoCodigo.cliente.validacao.PaisPossuiEstadoValidator;
 
 @RestController

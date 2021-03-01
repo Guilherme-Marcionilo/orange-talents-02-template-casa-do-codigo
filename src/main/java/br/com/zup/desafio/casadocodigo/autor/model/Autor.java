@@ -1,4 +1,4 @@
-package br.com.zup.desafio.CasaDoCodigo.autor;
+package br.com.zup.desafio.CasaDoCodigo.autor.model;
 
 import java.time.LocalDateTime;
 
